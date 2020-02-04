@@ -2,7 +2,6 @@
  * You can build it with 'make example'. */
 #include "src/actest.h"
 #include <stdlib.h>
-#include <stdio.h>
 /* These are the functions we want to test. */
 int
 add(int x, int y) {
