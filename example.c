@@ -31,41 +31,38 @@ char* test_add(void* data) {
 	/* All of our test functions require data,
 	 * so we need to check that the given pointer
 	 * is not a NULL-pointer. */
-	if (data) {
-		/* This is where the actual testing happens.
-		 * Note that the returned message should contain
-		 * a note on what test failed (in this case add). */
-		int* integer_data = data;
-		if (integer_data[0] + integer_data[1] != add(integer_data[0], integer_data[1])) return "TEST ADD 1";
-		if (integer_data[2] + integer_data[3] != add(integer_data[2], integer_data[3])) return "TEST ADD 2";
-		if (integer_data[4] + integer_data[5] != add(integer_data[4], integer_data[5])) return "TEST ADD 3";
-	} else {
-		return "NO DATA PROVIDED";
-	}	
+	if (!data) return "NO DATA PROVIDED";
+
+	/* This is where the actual testing happens.
+	 * Note that the returned message should contain
+	 * a note on what test failed (in this case add). */
+	int* integer_data = data;
+	if (integer_data[0] + integer_data[1] != add(integer_data[0], integer_data[1])) return "TEST ADD 1";
+	if (integer_data[2] + integer_data[3] != add(integer_data[2], integer_data[3])) return "TEST ADD 2";
+	if (integer_data[4] + integer_data[5] != add(integer_data[4], integer_data[5])) return "TEST ADD 3";
+
 	return 0;
 }
 
 char* test_mul(void* data) {
-	if (data) {
-		int* integer_data = data;
-		if (integer_data[0] * integer_data[1] != mul(integer_data[0], integer_data[1])) return "TEST MUL 1";
-		if (integer_data[2] * integer_data[3] != mul(integer_data[2], integer_data[3])) return "TEST MUL 2";
-		if (integer_data[4] * integer_data[5] != mul(integer_data[4], integer_data[5])) return "TEST MUL 3";
-	} else {
-		return "NO DATA PROVIDED";
-	}
+	if (!data) return "NO DATA PROVIDED";
+
+	int* integer_data = data;
+	if (integer_data[0] * integer_data[1] != mul(integer_data[0], integer_data[1])) return "TEST MUL 1";
+	if (integer_data[2] * integer_data[3] != mul(integer_data[2], integer_data[3])) return "TEST MUL 2";
+	if (integer_data[4] * integer_data[5] != mul(integer_data[4], integer_data[5])) return "TEST MUL 3";
+
 	return 0;
 }
 
 char* test_sub(void* data) {
-	if (data) {
-		int* integer_data = data;
-		if (integer_data[0] - integer_data[1] != sub(integer_data[0], integer_data[1])) return "TEST SUB 1";
-		if (integer_data[2] - integer_data[3] != sub(integer_data[2], integer_data[3])) return "TEST SUB 2";
-		if (integer_data[4] - integer_data[5] != sub(integer_data[4], integer_data[5])) return "TEST SUB 3";
-	} else {
-		return "NO DATA PROVIDED";
-	}
+	if (!data) return "NO DATA PROVIDED";
+
+	int* integer_data = data;
+	if (integer_data[0] - integer_data[1] != sub(integer_data[0], integer_data[1])) return "TEST SUB 1";
+	if (integer_data[2] - integer_data[3] != sub(integer_data[2], integer_data[3])) return "TEST SUB 2";
+	if (integer_data[4] - integer_data[5] != sub(integer_data[4], integer_data[5])) return "TEST SUB 3";
+
 	return 0;
 }
 
